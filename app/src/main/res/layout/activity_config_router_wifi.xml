@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <include layout="@layout/title_bar"/>
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/title_bar"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="35dp"
+            android:text="填写要连接的无线网络"
+            android:textColor="@color/black_333333"
+            android:textSize="16sp"/>
+
+        <RelativeLayout
+            android:id="@+id/rl_wifi_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_title"
+            android:layout_marginEnd="28dp"
+            android:layout_marginStart="28dp"
+            android:layout_marginTop="36dp"
+            android:background="@drawable/shape_rec_config_wifi"
+            android:gravity="center_vertical"
+            android:padding="16dp">
+
+            <ImageView
+                android:id="@+id/iv_wifi_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:background="@mipmap/add_wifi"/>
+
+            <EditText
+                android:id="@+id/et_wifi_name"
+                style="@style/InputStyle"
+                android:layout_marginEnd="12dp"
+                android:layout_marginStart="13dp"
+                android:layout_toEndOf="@+id/iv_wifi_name"
+                android:layout_toStartOf="@+id/ib_wifi_name"
+                android:hint="请输入WiFi名称"
+                android:maxLength="1000"
+                android:inputType="text"
+                android:text=""
+                android:textColor="@color/black_333333"
+                android:textColorHint="@color/gray_cdcdcd"
+                android:textSize="14sp"/>
+
+            <ImageButton
+                android:id="@+id/ib_wifi_name"
+                android:visibility="gone"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:background="@null"
+                android:onClick="showWifi"
+                android:src="@mipmap/add_down"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_wifi_pwd"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/rl_wifi_name"
+            android:layout_marginEnd="28dp"
+            android:layout_marginStart="28dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/shape_rec_config_wifi"
+            android:gravity="center_vertical"
+            android:padding="16dp">
+
+            <ImageView
+                android:id="@+id/iv_wifi_pwd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:background="@mipmap/add_lock"/>
+
+            <EditText
+                android:id="@+id/et_wifi_pwd"
+                style="@style/PwdInputStyle"
+                android:layout_marginEnd="12dp"
+                android:layout_marginStart="13dp"
+                android:layout_toEndOf="@+id/iv_wifi_pwd"
+                android:layout_toStartOf="@+id/iv_show_pwd"
+                android:hint="请输入WiFi密码"
+                android:text=""
+                android:textColor="@color/black_333333"
+                android:textColorHint="@color/gray_cdcdcd"
+                android:textSize="14sp"/>
+
+            <ImageView
+                android:id="@+id/iv_show_pwd"
+                style="@style/ShowPwdCheckBoxStyle"
+                android:layout_alignBottom="@+id/et_wifi_pwd"
+                android:onClick="changeInputType"
+                android:src="@mipmap/otherbihe"
+                android:tag="hide"/>
+        </RelativeLayout>
+
+        <Button
+            android:id="@+id/btn_next"
+            style="@style/GreenButtonStyle"
+            android:layout_below="@+id/rl_wifi_pwd"
+            android:layout_marginTop="120dp"
+            android:onClick="config"
+            android:text="开始配置"/>
+
+    </RelativeLayout>
+</layout>

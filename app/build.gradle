@@ -1,0 +1,198 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 27
+    buildToolsVersion "27.0.3"
+    defaultConfig {
+        applicationId "com.qtec.homestay"
+        minSdkVersion 18
+        targetSdkVersion 27
+        versionCode 1
+        versionName "1.0.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+        javaCompileOptions { annotationProcessorOptions { includeCompileClasspath = true } }
+
+        multiDexEnabled true
+    }
+
+    signingConfigs {
+        debug {
+            /* File strFile = new File("/home/shaojun/WorkSpaces/AndroidWorkspaces/Work/AndroidHomestay/app/sign/smart_home_debug.jks")
+             storeFile file(strFile)
+             storePassword "qtec123456"
+             keyAlias "debugkey0"
+             keyPassword "qtec123456"*/
+            //println strFile.absolutePath;
+            keyAlias 'key0'
+            keyPassword 'qtec123456'
+            storeFile file('/home/shaojun/WorkSpaces/AndroidWorkspaces/Work/AndroidHomestay/app/sign/smart_home_release.jks')
+            storePassword 'qtec123456'
+        }
+        release {
+            File strFile = new File("/home/shaojun/WorkSpaces/AndroidWorkspaces/Work/AndroidHomestay/app/sign/smart_home_release.jks")
+            storeFile file('/home/shaojun/WorkSpaces/AndroidWorkspaces/Work/AndroidHomestay/app/sign/smart_home_release.jks')
+            storePassword "qtec123456"
+            keyAlias "key0"
+            keyPassword "qtec123456"
+            // println strFile.absolutePath;
+        }
+    }
+
+    buildTypes {
+        debug {
+            signingConfig signingConfigs.release
+            minifyEnabled false  // false表示不混淆，true表示混淆
+            shrinkResources false //移除无用的resource文件
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+//            testProguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguardTest-rules.pro'
+        }
+
+        release {
+            signingConfig signingConfigs.release
+            minifyEnabled false  // false表示不混淆，true表示混淆
+            shrinkResources false //移除无用的resource文件
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+//            testProguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguardTest-rules.pro'
+
+            //Zipalign优化
+            zipAlignEnabled true
+            // 不显示Log
+//            buildConfigField "boolean", "LOG_DEBUG", "false"
+        }
+    }
+
+    repositories {
+        flatDir {
+            dirs 'libs'
+        }
+    }
+
+    //3.0后开启Lambda
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    dataBinding {
+        enabled true
+    }
+
+    //    // If you need to add more flavors, consider using flavor dimensions.
+    flavorDimensions "prod1"
+    productFlavors {
+        mock {
+//            applicationIdSuffix = ".mock"
+            dimension "prod1"
+            applicationId = "com.qtec.homestay.mock"
+
+        }
+//        dev {
+//            applicationIdSuffix = ".dev"
+//        }
+        prod {
+            dimension "prod1"
+            applicationId = "com.qtec.homestay"
+
+        }
+    }
+
+//    // Remove mockRelease as it's not needed.
+    android.variantFilter { variant ->
+        if (variant.buildType.name.equals('release')
+                && variant.getFlavors().get(0).name.equals('mock')) {
+            variant.setIgnore(true)
+        }
+    }
+
+    packagingOptions {
+        exclude 'LICENSE.txt'
+        exclude 'META-INF/DEPENDENCIES'
+        exclude 'META-INF/ASL2.0'
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/LICENSE'
+    }
+
+    lintOptions {
+        quiet true
+        abortOnError false
+        ignoreWarnings true
+        disable 'InvalidPackage'            //Some libraries have issues with this.
+        disable 'OldTargetApi'
+        //Lint gives this warning but SDK 20 would be Android L Beta.
+        disable 'IconDensities'             //For testing purpose. This is safe to remove.
+        disable 'IconMissingDensityFolder'  //For testing purpose. This is safe to remove.
+    }
+
+    project.gradle.startParameter.excludedTaskNames.add("lint")
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation files('libs/zxing.jar')
+    implementation files('libs/aliyun-oss-sdk-android-2.3.0.jar')
+    implementation files('libs/ocr-sdk.jar')
+    implementation "com.android.support:appcompat-v7:$rootProject.ext.supportLibVersion"
+    implementation 'com.android.support.constraint:constraint-layout:1.1.2'
+    implementation "com.android.support:design:$rootProject.ext.supportLibVersion"
+    implementation "com.android.support:cardview-v7:$rootProject.ext.supportLibVersion"
+
+    //    api project(':data')
+    implementation "com.orhanobut:logger:$rootProject.ext.loggerVersion"
+    implementation "com.blankj:utilcode:$rootProject.ext.androidUtilCodeVersion"
+    implementation "io.reactivex.rxjava2:rxjava:$rootProject.ext.rxJavaVersion"
+    implementation "io.reactivex.rxjava2:rxandroid:$rootProject.ext.rxAndroidVersion"
+    compileOnly "org.glassfish:javax.annotation:$rootProject.ext.javaxAnnotationVersion"
+    implementation "com.google.dagger:dagger:$rootProject.ext.daggerVersion"
+    annotationProcessor "com.google.dagger:dagger-compiler:$rootProject.ext.daggerVersion"
+    implementation "com.umeng.analytics:analytics:$rootProject.ext.umengVersion"
+    implementation "com.github.bumptech.glide:glide:$rootProject.ext.glideVersion"
+    implementation "com.google.code.gson:gson:$rootProject.ext.gsonVersion"
+    implementation "com.squareup.okhttp3:okhttp:$rootProject.ext.okHttpVersion"
+
+    //keystore
+    implementation name: 'keylibrary-0.0.15', ext: 'aar'
+
+    //sm4
+    implementation 'com.github.blueflybee:sm2sm3sm4:v0.0.3'
+
+    //title bar
+    implementation name: 'titlebarlib-1.0.0', ext: 'aar'
+
+    //router
+    implementation name: 'esptouch-v1.0.0', ext: 'aar'
+
+    //ble
+    implementation name: 'blelibrary-v0.0.76', ext: 'aar'
+
+    //ocr
+    implementation name: 'ocr_1.0.0', ext: 'aar'
+
+    //ui
+    implementation name: 'uilibrary2-v0.0.2', ext: 'aar'
+
+    //app update
+    implementation 'com.github.blueflybee:android-update:v1.0.9'
+
+    //action sheet
+    implementation 'com.baoyz.actionsheet:library:1.1.7'
+    implementation 'com.github.blueflybee:circle-progress-android:v0.0.2'
+    implementation('com.github.blueflybee:photo-out:v0.0.2') {
+        exclude group: 'io.reactivex.rxjava2'
+    }
+    implementation 'com.github.blueflybee.photo-picker:glide:v0.0.1'
+
+    //wexin
+    implementation 'com.tencent.mm.opensdk:wechat-sdk-android-with-mta:5.1.6'
+
+    //    implementation 'com.loopj.android:android-async-http:1.4.9'
+    testImplementation "junit:junit:$rootProject.ext.junitVersion"
+    testImplementation "org.mockito:mockito-core:$rootProject.ext.mockitoVersion"
+    testImplementation "org.assertj:assertj-core:$rootProject.ext.assertJVersion"
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+
+    //load-more
+    implementation 'in.srain.cube:ptr-load-more:1.0.5'
+    implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.22'
+}

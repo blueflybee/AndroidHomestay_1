@@ -1,0 +1,314 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/gray_fafafa"
+        android:orientation="vertical">
+
+        <include layout="@layout/title_bar"/>
+
+        <RelativeLayout
+            android:id="@+id/rl_name"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:layout_below="@+id/title_bar"
+            android:background="@color/white"
+            android:gravity="center_vertical"
+            >
+
+            <TextView
+                android:id="@+id/tv_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_marginLeft="20dp"
+                android:layout_marginStart="19dp"
+                android:text="姓名"
+                android:textColor="@color/black_333333"
+                android:textSize="15sp"/>
+
+            <EditText
+                android:id="@+id/et_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginLeft="25dp"
+                android:layout_toRightOf="@+id/tv_name"
+                android:background="@null"
+                android:ellipsize="end"
+                android:gravity="left"
+                android:hint="请输入客户姓名"
+                android:singleLine="true"
+                android:textColorHint="@color/gray_bdbdbd"
+                android:textColor="@color/black_333333"
+                android:textSize="15sp"/>
+        </RelativeLayout>
+
+        <View
+            android:id="@+id/view1"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_below="@+id/rl_name"
+            android:layout_marginLeft="20dp"
+            android:background="@color/gray"
+            />
+
+        <RelativeLayout
+            android:id="@+id/rl_CARD_ID"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:layout_below="@+id/view1"
+            android:background="@color/white"
+            android:gravity="center_vertical"
+            >
+
+            <TextView
+                android:id="@+id/tv_card_id"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="20dp"
+                android:text="身份证号"
+                android:textColor="@color/black_333333"
+                android:textSize="15sp"
+                />
+
+            <ImageView
+                android:id="@+id/img_card_id"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="5dp"
+                android:background="@mipmap/ic_send_sao"
+                />
+            <!--451200199109249480-->
+            <EditText
+                android:id="@+id/et_cardId"
+                android:layout_width="160dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="25dp"
+                android:layout_toRightOf="@+id/tv_card_id"
+                android:background="@null"
+                android:ellipsize="end"
+                android:gravity="left"
+                android:hint="请输入身份证号"
+                android:text=""
+                android:singleLine="true"
+                android:textColorHint="@color/gray_bdbdbd"
+                android:textColor="@color/black_333333"
+                android:textSize="15sp"/>
+        </RelativeLayout>
+
+        <View
+            android:id="@+id/view2"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_below="@+id/rl_CARD_ID"
+            android:layout_marginLeft="20dp"
+            android:background="@color/gray"
+            />
+
+        <RelativeLayout
+            android:id="@+id/rl_phone_num"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:layout_below="@id/view2"
+            android:background="@color/white"
+            android:gravity="center_vertical"
+            >
+
+            <TextView
+                android:id="@+id/tv_phone_num"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="20dp"
+                android:text="手机号码"
+                android:textColor="@color/black_333333"
+                android:textSize="15sp"/>
+
+            <EditText
+                android:id="@+id/et_phoneNo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginLeft="25dp"
+                android:layout_toRightOf="@+id/tv_phone_num"
+                android:background="@null"
+                android:ellipsize="end"
+                android:gravity="left"
+                android:hint="请输入手机号"
+                android:inputType="number"
+                android:singleLine="true"
+                android:textColorHint="@color/gray_bdbdbd"
+                android:textColor="@color/black_333333"
+                android:textSize="15sp"/>
+        </RelativeLayout>
+
+        <View
+            android:id="@+id/view3"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_below="@id/rl_phone_num"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/gray"
+            />
+
+        <RelativeLayout
+            android:id="@+id/rl_room"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:layout_below="@id/view3"
+            android:background="@color/white"
+            android:gravity="center_vertical"
+            android:onClick="selectRoomClick"
+            >
+
+            <TextView
+                android:id="@+id/tv_roomNo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="20dp"
+                android:text="房间"
+                android:textColor="@color/black_333333"
+                android:textSize="15sp"/>
+
+            <ImageView
+                android:id="@+id/img_more_room"
+                android:layout_width="6dp"
+                android:layout_height="10dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="5dp"
+                android:background="@mipmap/ic_navigate_next_black_48dp"
+                />
+
+            <TextView
+                android:id="@+id/tv_enterRoomNo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="25dp"
+                android:layout_toLeftOf="@+id/img_more_room"
+                android:layout_toRightOf="@+id/tv_roomNo"
+                android:background="@null"
+                android:ellipsize="end"
+                android:gravity="left"
+                android:hint="请选择房间"
+                android:singleLine="true"
+                android:textColorHint="@color/gray_bdbdbd"
+                android:textColor="@color/black_333333"
+                android:textSize="15sp"/>
+        </RelativeLayout>
+
+        <View
+            android:id="@+id/view4"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_below="@id/rl_room"
+            android:layout_marginLeft="20dp"
+            android:background="@color/gray"
+            />
+
+        <RelativeLayout
+            android:id="@+id/rl_check_in_time"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:layout_below="@id/view4"
+            android:background="@color/white"
+            android:gravity="center_vertical"
+            android:onClick="selectCheckInTime"
+            >
+
+            <TextView
+                android:id="@+id/tv_checkTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="20dp"
+                android:text="入住时间"
+                android:textColor="@color/black_333333"
+                android:textSize="15sp"/>
+
+            <ImageView
+                android:id="@+id/img_more1"
+                android:layout_width="6dp"
+                android:layout_height="10dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="5dp"
+                android:background="@mipmap/ic_navigate_next_black_48dp"
+                />
+
+            <TextView
+                android:id="@+id/tv_time"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="25dp"
+                android:layout_toLeftOf="@+id/img_more1"
+                android:layout_toRightOf="@+id/tv_checkTime"
+                android:background="@null"
+                android:ellipsize="end"
+                android:gravity="left"
+                android:hint="请选择入住时间"
+                android:singleLine="true"
+                android:textColorHint="@color/gray_bdbdbd"
+                android:textColor="@color/black_333333"
+                android:textSize="15sp"/>
+        </RelativeLayout>
+
+        <View
+            android:id="@+id/view5"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_below="@id/rl_check_in_time"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/gray"
+            />
+
+        <RelativeLayout
+            android:id="@+id/rl_send_pwd"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:layout_below="@+id/view5"
+            android:background="@color/white"
+            android:gravity="center_vertical"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="20dp"
+                android:text="门锁密码通过短信发送"
+                android:textColor="@color/black_333333"
+                android:textSize="15sp"/>
+
+            <android.support.v7.widget.SwitchCompat
+                android:id="@+id/switch_msg_send"
+                android:layout_width="40dp"
+                android:layout_height="24dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="20dp"
+                android:background="@drawable/switch_selector"
+                app:track="@null"
+                android:thumb="@null"
+                />
+        </RelativeLayout>
+
+        <Button
+            android:id="@+id/btn_checkInRoom"
+            android:onClick="checkInRoom"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_alignParentBottom="true"
+            android:background="@color/green_99e5df"
+            android:text="办理入住"
+            />
+    </RelativeLayout>
+</layout>

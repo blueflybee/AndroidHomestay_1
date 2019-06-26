@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:titlebar="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/gray_fafafa"
+        android:orientation="vertical">
+
+        <include layout="@layout/title_bar_search"/>
+
+        <ListView
+            android:layout_marginTop="10dp"
+            android:id="@+id/list_room"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/title_bar"
+            android:divider="@color/white_transparent"
+            android:dividerHeight="8dp"
+            android:paddingEnd="3dp"
+            android:paddingStart="3dp"
+            android:visibility="gone"
+            tools:listitem="@layout/item_fragment_home"/>
+
+        <TextView
+            android:id="@+id/tv_no_result"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/title_bar"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="50dp"
+            android:text="没有匹配结果"
+            android:textColor="@color/gray_999999"
+            android:textSize="15sp"
+            android:visibility="visible"/>
+    </RelativeLayout>
+</layout>

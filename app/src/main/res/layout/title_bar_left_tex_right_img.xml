@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.blueflybee.titlebarlib.widget.TitleBar
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:titlebar="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/title_bar"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    titlebar:centerTextColor="@color/black_333333"
+    titlebar:centerTextSize="16sp"
+    titlebar:centerType="textView"
+    titlebar:fillStatusBar="false"
+    titlebar:leftDrawable="@mipmap/top_back"
+    titlebar:leftTextSize="15sp"
+    titlebar:leftType="textView"
+    titlebar:rightType="imageButton"
+    titlebar:rightImageResource="@mipmap/ic_lock_set"
+    titlebar:titleBarColor="@color/white"
+    titlebar:titleBarHeight="50dp">
+</com.blueflybee.titlebarlib.widget.TitleBar>

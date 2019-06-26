@@ -1,0 +1,106 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <include layout="@layout/title_bar_no_title"/>
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="28dp"
+            android:layout_marginTop="36dp"
+            android:text="修改密码"
+            android:textColor="@color/black_333333"
+            android:textSize="24sp"/>
+
+        <RelativeLayout
+            android:id="@+id/rl_pwd"
+            style="@style/InputItemLayoutStyle"
+            android:layout_below="@+id/rl_name"
+            android:layout_marginTop="60dp">
+
+            <TextView
+                android:id="@+id/tv_label_pwd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="原密码"
+                android:textColor="@color/black_333333"
+                android:textSize="13sp"/>
+
+            <EditText
+                android:id="@+id/et_pwd"
+                style="@style/PwdInputStyle"
+                android:layout_below="@id/tv_label_pwd"
+                android:layout_marginTop="22dp"
+                android:layout_toLeftOf="@+id/iv_show_pwd"
+                android:hint="请输入原密码"
+                android:inputType="textPassword"
+                android:maxLength="20"/>
+
+            <!--<ImageView-->
+                <!--android:id="@+id/iv_show_pwd"-->
+                <!--style="@style/ShowPwdCheckBoxStyle"-->
+                <!--android:layout_alignBottom="@+id/et_pwd"-->
+                <!--android:onClick="changeInputType"-->
+                <!--android:src="@mipmap/otherbihe"-->
+                <!--android:tag="hide"/>-->
+
+            <View
+                style="@style/LineHorizontalStyle"
+                android:layout_below="@id/et_pwd"
+                android:layout_marginTop="11dp"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_new_pwd"
+            style="@style/InputItemLayoutStyle"
+            android:layout_below="@+id/rl_name"
+            android:layout_marginTop="25dp">
+
+            <TextView
+                android:id="@+id/tv_label_new_pwd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="新密码"
+                android:textColor="@color/black_333333"
+                android:textSize="13sp"/>
+
+            <EditText
+                android:id="@+id/et_new_pwd"
+                style="@style/PwdInputStyle"
+                android:layout_below="@id/tv_label_new_pwd"
+                android:layout_marginTop="22dp"
+                android:layout_toLeftOf="@+id/iv_show_new_pwd"
+                android:hint="请输入6-20位新密码"
+                android:inputType="textPassword"
+                android:maxLength="20"/>
+
+            <ImageView
+                android:id="@+id/iv_show_new_pwd"
+                style="@style/ShowPwdCheckBoxStyle"
+                android:layout_alignBottom="@+id/et_new_pwd"
+                android:onClick="changeInputType"
+                android:src="@mipmap/otherbihe"
+                android:tag="hide"/>
+
+            <View
+                style="@style/LineHorizontalStyle"
+                android:layout_below="@id/et_new_pwd"
+                android:layout_marginTop="11dp"/>
+
+        </RelativeLayout>
+
+
+        <Button
+            android:id="@+id/btn_modify_pwd"
+            style="@style/GreenButtonStyle"
+            android:layout_marginTop="50dp"
+            android:onClick="modifyPwd"
+            android:text="保存"/>
+    </LinearLayout>
+</layout>

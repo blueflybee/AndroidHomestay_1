@@ -1,0 +1,79 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@mipmap/set_bg">
+
+            <ImageView
+                android:id="@+id/img_head"
+                style="@style/HeadIvStyle"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="35dp"
+                android:clickable="true"/>
+
+
+            <TextView
+                android:id="@+id/tv_nick_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/img_head"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="13dp"
+                android:text=""
+                android:textColor="@color/white"
+                android:textSize="16sp"/>
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/rl_feed_back"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/view_white_selector"
+            android:clickable="true"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp">
+
+            <TextView
+                style="@style/MineFeedbackTvStyle"
+                android:drawableLeft="@mipmap/set_idea"
+                android:text="意见反馈"/>
+
+            <ImageView
+                style="@style/MineFeedbackIvStyle"/>
+        </RelativeLayout>
+
+        <View
+            style="@style/LineHorizontalStyle"
+            android:layout_marginStart="26dp"
+            android:background="@color/gray_eeeeee"
+            />
+
+        <RelativeLayout
+            android:id="@+id/rl_about_us"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:background="@drawable/view_white_selector"
+            android:clickable="true"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp">
+
+            <TextView
+                style="@style/MineFeedbackTvStyle"
+                android:drawableLeft="@mipmap/set_about"
+                android:text="关于我们"/>
+
+            <ImageView
+                style="@style/MineFeedbackIvStyle"/>
+        </RelativeLayout>
+    </LinearLayout>
+</layout>

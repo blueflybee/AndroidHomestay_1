@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <include layout="@layout/title_bar"/>
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/card_router_info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/title_bar"
+            android:layout_marginEnd="23dp"
+            android:layout_marginStart="23dp"
+            android:layout_marginTop="16dp"
+            app:cardBackgroundColor="@color/gray_f5f5f5"
+            app:cardCornerRadius="5dp"
+            app:cardElevation="8dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="20dp">
+
+                <RelativeLayout
+                    android:id="@+id/rl_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tv_name_label"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="网关名称"
+                        android:textColor="@color/black_333333"
+                        android:textSize="15sp"/>
+
+                    <TextView
+                        android:id="@+id/tv_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginStart="6dp"
+                        android:layout_toEndOf="@+id/tv_name_label"
+                        android:gravity="right"
+                        android:singleLine="true"
+                        android:text="三点安全网关"
+                        android:textColor="@color/gray_999999"
+                        android:textSize="15sp"/>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/rl_id"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/rl_name"
+                    android:layout_marginTop="36dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tv_id_label"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="网关ID"
+                        android:textColor="@color/black_333333"
+                        android:textSize="15sp"/>
+
+                    <TextView
+                        android:id="@+id/tv_id"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginStart="6dp"
+                        android:layout_toEndOf="@+id/tv_id_label"
+                        android:gravity="right"
+                        android:singleLine="true"
+                        android:text="60019"
+                        android:textColor="@color/gray_999999"
+                        android:textSize="15sp"/>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/rl_model"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/rl_id"
+                    android:layout_marginTop="36dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tv_model_label"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="网关型号"
+                        android:textColor="@color/black_333333"
+                        android:textSize="15sp"/>
+
+                    <TextView
+                        android:id="@+id/tv_model"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginStart="6dp"
+                        android:layout_toEndOf="@+id/tv_model_label"
+                        android:gravity="right"
+                        android:singleLine="true"
+                        android:text="SD001"
+                        android:textColor="@color/gray_999999"
+                        android:textSize="15sp"/>
+                </RelativeLayout>
+
+
+                <RelativeLayout
+                    android:id="@+id/rl_type"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/rl_model"
+                    android:layout_marginTop="36dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tv_type_label"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="网关类型"
+                        android:textColor="@color/black_333333"
+                        android:textSize="15sp"/>
+
+                    <TextView
+                        android:id="@+id/tv_type"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginStart="6dp"
+                        android:layout_toEndOf="@+id/tv_type_label"
+                        android:gravity="right"
+                        android:singleLine="true"
+                        android:text="智能锁网关"
+                        android:textColor="@color/gray_999999"
+                        android:textSize="15sp"/>
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+        </android.support.v7.widget.CardView>
+
+
+        <Button
+            android:id="@+id/btn_add_router"
+            style="@style/GreenButtonStyle"
+            android:layout_below="@+id/card_router_info"
+            android:layout_marginTop="120dp"
+            android:onClick="addRouter"
+            android:text="配置网关"/>
+
+    </RelativeLayout>
+</layout>

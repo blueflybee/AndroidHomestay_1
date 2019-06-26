@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Homestay</string>
+    <string name="copyright">九州量子\nCopyright 2007-2016 © QTEC®. All rights reserved.</string>
+    <string name="tips_config_router">请长按网关配置键3秒，网关发出“嘀”的一声，\n表示进入Wi-Fi配置模式，此时网关\n配网键上指示灯交替闪烁</string>
+    <string name="txt_dialog_open_ble_content">当前手机蓝牙关闭，是否打开以扫描\n附近的蓝牙设备？</string>
+
+    <string name="wifi_5g_message">设备不支持5G Wifi</string>
+
+    <string name="filter_number_letter">0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ</string>
+    <string name="filter_number">0123456789</string>
+    <string name="filter_number_point">0123456789.</string>
+    <string name="camera_permission_required">本功能需要相机权限！</string>
+    <string name="filter_no_space_no_chinese">0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ`¬!"£$%^*()~=#{}[];':,./?/*-_+&#060;&#062;&#064;&#038;</string>
+
+    <string name="filter_wei_xin">0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_-</string>
+</resources>

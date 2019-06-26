@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:titlebar="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <include layout="@layout/title_bar"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="230dp">
+
+            <ImageButton
+                android:id="@+id/ib_scan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:background="@mipmap/ic_searchlock1"
+                android:onClick="scan"
+                android:visibility="visible"/>
+
+            <RelativeLayout
+                android:visibility="gone"
+                android:id="@+id/ll_scanning"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true">
+
+                <ImageView
+                    android:id="@+id/iv_scanning"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@mipmap/ic_searchlock2"/>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:background="@mipmap/ic_searchlock2n"/>
+            </RelativeLayout>
+
+
+        </RelativeLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/gray_fafafa"
+            android:paddingBottom="12dp"
+            android:paddingLeft="26dp"
+            android:paddingTop="12dp"
+            android:text="搜索到的门锁"
+            android:textColor="@color/gray_999999"
+            android:textSize="14sp"/>
+
+        <ListView
+            android:id="@+id/list_lock"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:divider="@color/gray_eeeeee"
+            android:dividerHeight="1dp"
+            tools:listitem="@layout/item_add_locker">
+        </ListView>
+
+
+    </LinearLayout>
+</layout>

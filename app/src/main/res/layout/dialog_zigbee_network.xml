@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:custom="http://schemas.android.com/apk/res-auto"
+        xmlns:titlebar="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shape_rec_radius_5dp_white_bg">
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="30dp"
+            android:text="门锁正在组网"
+            android:textColor="@color/black_333333"
+            android:textSize="16sp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/tv_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_title"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="25dp"
+            android:gravity="center"
+            android:lineSpacingExtra="6dp"
+            android:text="门锁正在组网，请耐心等待"
+            android:textColor="@color/black_333333"
+            android:textSize="14sp"/>
+
+        <RelativeLayout
+            android:id="@+id/rl_progress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="30dp"
+            android:layout_marginTop="30dp">
+
+            <com.flybluebee.circleprogress.CircleProgress
+                android:id="@+id/progress"
+                android:layout_width="160dp"
+                android:layout_height="160dp"
+                android:layout_centerInParent="true"
+                custom:bgColor="@color/green_33cbbf_10"
+                custom:currProgress="0"
+                custom:foreEndColor="@color/green_00beaf"
+                custom:foreStartColor="@color/green_33cbbf"
+                custom:isCircleCorner="true"
+                custom:maxProgress="360"
+                custom:progressInitialPosition="-90"
+                custom:progressWidth="4dp"
+                custom:useAnimation="true"
+                custom:useGradient="true"/>
+
+            <ImageView
+                android:id="@+id/iv_key"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:background="@mipmap/zuwangz_ic"/>
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+</layout>

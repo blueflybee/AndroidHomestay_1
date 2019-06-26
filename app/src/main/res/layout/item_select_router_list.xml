@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+    <CheckedTextView
+        android:id="@+id/tv_name"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:checkMark="@drawable/dialog_choose_router_selector"
+        android:drawablePadding="16dp"
+        android:drawableStart="@mipmap/router_ic"
+        android:gravity="center_vertical"
+        android:paddingEnd="25dp"
+        android:paddingStart="25dp"
+        android:text="网关001"
+        android:textColor="@color/black_333333"
+        android:textSize="15sp"/>
+</layout>

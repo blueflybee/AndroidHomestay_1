@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:titlebar="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <RelativeLayout
+        android:background="@drawable/shape_rec_radius_5dp_white_bg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <include layout="@layout/title_bar"/>
+
+        <ListView
+            android:layout_below="@+id/title_bar"
+            android:id="@+id/list_wifi"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:dividerHeight="1dp"
+            android:divider="@color/gray_eeeeee"
+            tools:listitem="@layout/item_choose_wifi">
+        </ListView>
+    </RelativeLayout>
+</layout>

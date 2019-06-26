@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shape_rec_radius_5dp_white_bg">
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="30dp"
+            android:text="门锁信息获取失败"
+            android:textSize="16sp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/tv_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_title"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:lineSpacingExtra="6dp"
+            android:text="门锁信息获取失败，请重新获取"
+            android:textSize="14sp"/>
+
+        <View
+            android:id="@+id/line"
+            style="@style/LineHorizontalStyle"
+            android:layout_below="@id/tv_content"
+            android:layout_marginTop="34dp"
+            android:background="@color/gray_dddddd"/>
+
+        <TextView
+            android:id="@+id/tv_confirm"
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:layout_below="@+id/line"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="重新获取"
+            android:textColor="@color/green_00beaf"
+            android:textSize="15sp"/>
+
+    </RelativeLayout>
+</layout>

@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:titlebar="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <com.blueflybee.titlebarlib.widget.TitleBar
+            android:id="@+id/title_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            titlebar:centerTextColor="@color/black_333333"
+            titlebar:centerText="设备"
+            titlebar:centerTextSize="16sp"
+            titlebar:centerType="textView"
+            titlebar:fillStatusBar="false"
+            titlebar:leftText="拓扑图"
+            titlebar:leftTextColor="@color/green_00beaf"
+            titlebar:leftTextSize="15sp"
+            titlebar:leftType="textView"
+            titlebar:rightTextColor="@color/green_00beaf"
+            titlebar:rightTextSize="15sp"
+            titlebar:rightText="添加设备"
+            titlebar:rightType="textView"
+            titlebar:titleBarColor="@color/white"
+            titlebar:titleBarHeight="50dp">
+        </com.blueflybee.titlebarlib.widget.TitleBar>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/tv_router"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/gray_fafafa"
+                    android:paddingBottom="12dp"
+                    android:paddingLeft="26dp"
+                    android:paddingTop="12dp"
+                    android:text="网关"
+                    android:textColor="@color/gray_999999"
+                    android:textSize="14sp"/>
+
+                <TextView
+                    android:id="@+id/tv_router_more"
+                    android:padding="12dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@color/gray_fafafa"
+                    android:text="更多"
+                    android:layout_alignParentRight="true"
+                    android:textColor="@color/gray_666666"
+                    android:textSize="14sp"/>
+
+                <com.qtec.homestay.view.component.ListViewForScrollView
+                    android:id="@+id/list_router"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_below="@+id/tv_router"
+                    android:divider="@color/gray_eeeeee"
+                    android:visibility="visible"
+                    android:dividerHeight="1dp"
+                    tools:listitem="@layout/item_device_list">
+                </com.qtec.homestay.view.component.ListViewForScrollView>
+
+                <TextView
+                    android:id="@+id/tv_lock"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/list_router"
+                    android:background="@color/gray_fafafa"
+                    android:paddingBottom="12dp"
+                    android:paddingLeft="26dp"
+                    android:paddingTop="12dp"
+                    android:text="门锁"
+                    android:textColor="@color/gray_999999"
+                    android:textSize="14sp"/>
+
+                <TextView
+                    android:id="@+id/tv_lock_more"
+                    android:padding="12dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@color/gray_fafafa"
+                    android:layout_alignTop="@+id/tv_lock"
+                    android:text="更多"
+                    android:layout_alignParentRight="true"
+                    android:textColor="@color/gray_666666"
+                    android:textSize="14sp"/>
+
+                <com.qtec.homestay.view.component.ListViewForScrollView
+                    android:id="@+id/list_lock"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_below="@+id/tv_lock"
+                    android:divider="@color/gray_eeeeee"
+                    android:dividerHeight="1dp"
+                    tools:listitem="@layout/item_device_list">
+                </com.qtec.homestay.view.component.ListViewForScrollView>
+            </RelativeLayout>
+        </ScrollView>
+    </LinearLayout>
+</layout>

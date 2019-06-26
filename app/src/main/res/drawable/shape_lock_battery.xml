@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape>
+            <stroke
+                android:width="1dp"
+                android:color="@color/green_00beaf"/>
+
+            <!--<padding-->
+            <!--android:bottom="2dp"-->
+            <!--android:left="2dp"-->
+            <!--android:right="2dp"-->
+            <!--android:top="2dp"/>-->
+
+            <solid android:color="@color/white"/>
+            <size
+                android:width="15dp"
+                android:height="18dp"
+                />
+
+        </shape>
+    </item>
+<!--top 57px-6px-->
+    <item
+        android:id="@+id/shape_battery"
+        android:bottom="6px"
+        android:left="6px"
+        android:right="6px"
+        android:top="6px">
+        <shape>
+            <!--<stroke-->
+            <!--android:width="1dp"-->
+            <!--android:color="@color/green_00beaf"/>-->
+
+            <!--<padding-->
+            <!--android:bottom="2dp"-->
+            <!--android:left="2dp"-->
+            <!--android:right="2dp"-->
+            <!--android:top="2dp"/>-->
+            <solid android:color="@color/green_00beaf"/>
+
+        </shape>
+    </item>
+
+    <item
+        android:bottom="17dp"
+        android:left="4dp"
+        android:right="4dp"
+        android:top="-1dp">
+        <shape>
+            <corners android:radius="1dp"/>
+            <!--<stroke-->
+            <!--android:width="1dp"-->
+            <!--android:color="@color/green_00beaf"/>-->
+
+            <!--<padding-->
+            <!--android:bottom="2dp"-->
+            <!--android:left="2dp"-->
+            <!--android:right="2dp"-->
+            <!--android:top="2dp"/>-->
+            <solid android:color="@color/green_00beaf"/>
+
+            <size
+                android:width="7dp"
+                android:height="2dp"
+                />
+        </shape>
+    </item>
+
+    <!--<item>-->
+    <!--<shape>-->
+    <!--&lt;!&ndash;<stroke&ndash;&gt;-->
+    <!--&lt;!&ndash;android:width="1dp"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:color="@color/green_00beaf"/>&ndash;&gt;-->
+
+    <!--&lt;!&ndash;<padding&ndash;&gt;-->
+    <!--&lt;!&ndash;android:bottom="2dp"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:left="2dp"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:right="2dp"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:top="2dp"/>&ndash;&gt;-->
+
+    <!--<solid android:color="@color/white"/>-->
+    <!--<size-->
+    <!--android:width="10dp"-->
+    <!--android:height="5dp"-->
+    <!--/>-->
+
+    <!--</shape>-->
+    <!--</item>-->
+    <!--<item android:bottom="1px">-->
+    <!--<shape>-->
+    <!--<solid android:color="@color/white" />-->
+    <!--<padding-->
+    <!--android:bottom="5dp"-->
+    <!--android:left="8dp"-->
+    <!--android:right="8dp"-->
+    <!--android:top="5dp" />-->
+    <!--</shape>-->
+    <!--</item>-->
+</layer-list>
+

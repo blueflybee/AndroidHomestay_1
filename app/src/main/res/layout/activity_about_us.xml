@@ -1,0 +1,86 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/gray_fafafa">
+
+        <include layout="@layout/title_bar"/>
+
+        <ImageView
+            android:id="@+id/iv_app_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/title_bar"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="44dp"
+            android:background="@mipmap/ic_launcher"/>
+
+        <TextView
+            android:id="@+id/tv_version"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/iv_app_icon"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="25dp"
+            android:textColor="@color/black_333333"
+            android:textSize="15sp"/>
+
+
+        <RelativeLayout
+            android:id="@+id/rl_check_update"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:layout_below="@id/tv_version"
+            android:layout_marginTop="45dp"
+            android:background="@drawable/view_white_selector"
+            android:onClick="checkUpdate"
+            android:paddingEnd="25dp"
+            android:paddingStart="25dp">
+
+            <TextView
+                style="@style/MineFeedbackTvStyle"
+                android:text="检测更新"/>
+
+            <ImageView
+                style="@style/MineFeedbackIvStyle"/>
+        </RelativeLayout>
+
+        <View
+            style="@style/LineHorizontalStyle"
+            android:layout_marginStart="26dp"
+            android:background="@color/gray_eeeeee"
+            />
+
+        <RelativeLayout
+            android:id="@+id/rl_agree"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:layout_below="@+id/rl_check_update"
+            android:background="@drawable/view_white_selector"
+            android:onClick="agree"
+            android:paddingEnd="25dp"
+            android:paddingStart="25dp">
+
+            <TextView
+                style="@style/MineFeedbackTvStyle"
+                android:text="用户协议"/>
+
+            <ImageView
+                style="@style/MineFeedbackIvStyle"/>
+        </RelativeLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="20dp"
+            android:layout_marginTop="25dp"
+            android:gravity="center"
+            android:text="@string/copyright"
+            android:textColor="@color/gray_999999"
+            android:textSize="12sp"/>
+    </RelativeLayout>
+</layout>

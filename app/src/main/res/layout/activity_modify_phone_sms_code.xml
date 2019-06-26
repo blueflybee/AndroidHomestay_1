@@ -1,0 +1,79 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!--<data>-->
+
+    <!--<import type="com.fernandocejas.android10.sample.presentation.data.User" />-->
+
+    <!--<variable-->
+    <!--name="user"-->
+    <!--type="User" />-->
+    <!--</data>-->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <include layout="@layout/title_bar_no_title"/>
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="28dp"
+            android:layout_marginTop="36dp"
+            android:text="修改手机"
+            android:textColor="@color/black_333333"
+            android:textSize="24sp"/>
+
+        <TextView
+            android:id="@+id/tv_tip_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="28dp"
+            android:layout_marginTop="24dp"
+            android:textColor="@color/black_333333"
+            android:textSize="13sp"/>
+
+        <RelativeLayout
+            style="@style/InputItemLayoutStyle"
+            android:layout_marginTop="56dp">
+
+            <EditText
+                android:id="@+id/et_enterVertifiCode"
+                style="@style/SmsCodeInputStyle"
+                android:hint="验证码"/>
+
+            <View
+                style="@style/LineHorizontalStyle"
+                android:layout_below="@id/et_enterVertifiCode"
+                android:layout_marginTop="13dp"
+                android:background="@color/gray_f3f3f3"/>
+
+        </RelativeLayout>
+
+
+        <TextView
+            android:id="@+id/tv_reSendVertifiCode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="25dp"
+            android:onClick="sendVerificationCode"
+            android:text="重新发送"
+            android:textColor="@color/green_00beaf"
+            android:textSize="13sp"/>
+
+        <!--<TextView-->
+        <!--android:id="@+id/tv_tips"-->
+        <!--style="@style/ErrTipTvStyle"-->
+        <!--android:layout_marginTop="17dp"/>-->
+
+        <Button
+            android:id="@+id/btn_next"
+            style="@style/GreenButtonStyle"
+            android:layout_marginTop="20dp"
+            android:onClick="nextStep"
+            android:text="下一步"/>
+    </LinearLayout>
+</layout>

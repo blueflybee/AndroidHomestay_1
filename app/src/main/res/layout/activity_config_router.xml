@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <include layout="@layout/title_bar"/>
+
+        <TextView
+            android:layout_below="@+id/title_bar"
+            android:id="@+id/tv_tips"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="58dp"
+            android:drawablePadding="52dp"
+            android:drawableTop="@mipmap/b_router"
+            android:gravity="center"
+            android:lineSpacingExtra="10dp"
+            android:text="@string/tips_config_router"
+            android:textColor="@color/black_424242"
+            android:textSize="15sp"/>
+
+        <Button
+            android:id="@+id/btn_next"
+            style="@style/GreenButtonStyle"
+            android:layout_below="@+id/tv_tips"
+            android:layout_marginTop="60dp"
+            android:onClick="next"
+            android:text="下一步"/>
+
+    </RelativeLayout>
+</layout>

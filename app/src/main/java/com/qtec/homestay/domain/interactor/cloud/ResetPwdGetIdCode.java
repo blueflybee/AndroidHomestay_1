@@ -1,0 +1,39 @@
+package com.qtec.homestay.domain.interactor.cloud;
+
+import com.qtec.homestay.domain.executor.PostExecutionThread;
+import com.qtec.homestay.domain.executor.ThreadExecutor;
+import com.qtec.homestay.domain.interactor.UseCase;
+import com.qtec.homestay.domain.model.mapp.rsp.ResetPwdGetIdCodeResponse;
+import com.qtec.homestay.domain.params.IRequest;
+import com.qtec.homestay.domain.repository.CloudRepository;
+
+import javax.inject.Inject;
+
+import io.reactivex.Observable;
+
+/**
+ * <pre>
+ *     author : shaojun
+ *     e-mail :
+ *     time   : 18-7-16
+ *     desc   :
+ *     version: 1.0
+ * </pre>
+ */
+public class ResetPwdGetIdCode extends UseCase<ResetPwdGetIdCodeResponse> {
+
+  private final CloudRepository cloudRepository;
+
+  @Inject
+  public ResetPwdGetIdCode(CloudRepository cloudRepository, ThreadExecutor threadExecutor,
+                           PostExecutionThread postExecutionThread) {
+    super(threadExecutor, postExecutionThread);
+    this.cloudRepository = cloudRepository;
+  }
+
+  @Override
+  protected Observable<ResetPwdGetIdCodeResponse> buildUseCaseObservable(IRequest param) {
+    return cloudRepository.resetPwdGetIdCode(param);
+  }
+}
+

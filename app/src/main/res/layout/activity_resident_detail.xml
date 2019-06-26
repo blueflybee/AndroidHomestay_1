@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:titlebar="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/gray_fafafa"
+        android:orientation="vertical">
+
+        <include layout="@layout/title_bar"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
+            android:layout_marginStart="10dp"
+            android:onClick="showLock"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/shape_rec_radius_5dp_white_bg"
+            android:padding="20dp">
+
+            <ImageView
+                android:id="@+id/iv_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@mipmap/shebei_lock"/>
+
+            <TextView
+                android:id="@+id/tv_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="4dp"
+                android:layout_toRightOf="@+id/iv_icon"
+                android:drawablePadding="9dp"
+                android:text=""
+                android:textColor="@color/black_333333"
+                android:textSize="15sp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_name"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="5dp"
+                android:layout_toRightOf="@+id/iv_icon"
+                android:drawablePadding="9dp"
+                android:text="当前状态：关闭"
+                android:textColor="@color/gray_999999"
+                android:textSize="15sp"/>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:background="@mipmap/ic_navigate_next_black_48dp"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:background="@color/white"
+            android:padding="20dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="房间号\n\n客户\n\n身份证号\n\n手机号码\n\n入住时间\n\n开锁密码"
+                android:textColor="@color/black_333333"
+                android:textSize="16sp"/>
+
+            <TextView
+                android:id="@+id/tv_detail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:gravity="right"
+                android:text=""
+                android:textColor="@color/black_333333"
+                android:textSize="16sp"/>
+        </RelativeLayout>
+
+        <Button
+            android:id="@+id/btn_check_out"
+            style="@style/GreenButtonStyle"
+            android:layout_marginTop="76dp"
+            android:onClick="checkOut"
+            android:text="离店"/>
+    </LinearLayout>
+</layout>

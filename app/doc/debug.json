@@ -1,0 +1,59 @@
+{
+  "data": {
+    "yesterday": {
+      "date": "13日星期一",
+      "high": "高温 33℃",
+      "fx": "东南风",
+      "low": "低温 24℃",
+      "fl": "<![CDATA[4-5级]]>",
+      "type": "阵雨"
+    },
+    "city": "萧山",
+    "forecast": [
+      {
+        "date": "14日星期二",
+        "high": "高温 34℃",
+        "fengli": "<![CDATA[3-4级]]>",
+        "low": "低温 27℃",
+        "fengxiang": "东南风",
+        "type": "阵雨"
+      },
+      {
+        "date": "15日星期三",
+        "high": "高温 33℃",
+        "fengli": "<![CDATA[<3级]]>",
+        "low": "低温 27℃",
+        "fengxiang": "东风",
+        "type": "阵雨"
+      },
+      {
+        "date": "16日星期四",
+        "high": "高温 32℃",
+        "fengli": "<![CDATA[<3级]]>",
+        "low": "低温 26℃",
+        "fengxiang": "东北风",
+        "type": "阵雨"
+      },
+      {
+        "date": "17日星期五",
+        "high": "高温 31℃",
+        "fengli": "<![CDATA[3-4级]]>",
+        "low": "低温 26℃",
+        "fengxiang": "东北风",
+        "type": "阵雨"
+      },
+      {
+        "date": "18日星期六",
+        "high": "高温 31℃",
+        "fengli": "<![CDATA[3-4级]]>",
+        "low": "低温 27℃",
+        "fengxiang": "北风",
+        "type": "阵雨"
+      }
+    ],
+    "ganmao": "各项气象条件适宜，发生感冒机率较低。但请避免长期处于空调房间中，以防感冒。",
+    "wendu": "33"
+  },
+  "status": 1000,
+  "desc": "OK"
+}

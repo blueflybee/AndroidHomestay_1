@@ -1,0 +1,37 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:titlebar="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <com.blueflybee.titlebarlib.widget.TitleBar
+            android:id="@+id/title_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            titlebar:centerTextColor="@color/black_333333"
+            titlebar:centerText="选择房间"
+            titlebar:centerTextSize="16sp"
+            titlebar:centerType="textView"
+            titlebar:fillStatusBar="false"
+            titlebar:rightTextColor="@color/green_00beaf"
+            titlebar:rightTextSize="15sp"
+            titlebar:rightText="确定"
+            titlebar:rightType="textView"
+            titlebar:titleBarColor="@color/white"
+            titlebar:titleBarHeight="50dp">
+        </com.blueflybee.titlebarlib.widget.TitleBar>
+
+        <ListView
+            android:id="@+id/lv_room"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:scrollbars="none"
+            android:divider="@null"
+            android:choiceMode="singleChoice"
+            />
+
+    </LinearLayout>
+</layout>
